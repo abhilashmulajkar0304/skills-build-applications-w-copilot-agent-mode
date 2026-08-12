@@ -8,10 +8,10 @@
  * 
  * Priority:
  * 1. VITE_API_BASE_URL (if manually set)
- * 2. Codespaces URL: https://{VITE_CODESPACE_NAME}-8000.app.github.dev/api
- * 3. Localhost: http://localhost:8000/api
+ * 2. Codespaces URL: https://{VITE_CODESPACE_NAME}-8000.app.github.dev
+ * 3. Localhost: http://localhost:8000
  * 
- * @returns {string} The API base URL
+ * @returns {string} The API base URL (without /api suffix, endpoints include it)
  */
 export function getApiBaseUrl() {
   // Check if custom API base URL is set
@@ -22,11 +22,11 @@ export function getApiBaseUrl() {
   // Check for Codespaces environment
   const codespaceName = import.meta.env.VITE_CODESPACE_NAME;
   if (codespaceName && codespaceName !== 'localhost') {
-    return `https://${codespaceName}-8000.app.github.dev/api`;
+    return `https://${codespaceName}-8000.app.github.dev`;
   }
 
   // Default to localhost
-  return 'http://localhost:8000/api';
+  return 'http://localhost:8000';
 }
 
 /**

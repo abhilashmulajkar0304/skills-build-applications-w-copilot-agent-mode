@@ -10,7 +10,7 @@ export default function Workouts() {
     async function loadWorkouts() {
       try {
         setLoading(true);
-        const data = await fetchFromApi('/workouts');
+        const data = await fetchFromApi('/api/workouts/');
         setWorkouts(data);
       } catch (err) {
         setError(err.message);

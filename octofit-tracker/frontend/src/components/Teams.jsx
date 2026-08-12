@@ -10,7 +10,7 @@ export default function Teams() {
     async function loadTeams() {
       try {
         setLoading(true);
-        const data = await fetchFromApi('/teams');
+        const data = await fetchFromApi('/api/teams/');
         setTeams(data);
       } catch (err) {
         setError(err.message);
