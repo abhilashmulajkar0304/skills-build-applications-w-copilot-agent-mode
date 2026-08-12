@@ -5,7 +5,7 @@ import { connectToDatabase } from './config/database.js';
 import apiRouter from './routes/api.js';
 
 dotenv.config();
-
+ 
 const app = express();
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
