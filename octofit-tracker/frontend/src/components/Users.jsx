@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchFromApi } from '../api.js';
 
+// API Endpoint: https://<codespace-name>-8000.app.github.dev/api/users
+const API_ENDPOINT = '/api/users/';
+
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
